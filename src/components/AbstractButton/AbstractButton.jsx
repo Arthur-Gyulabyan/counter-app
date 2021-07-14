@@ -1,18 +1,15 @@
 import React from 'react';
 
 class AbstractButton extends React.Component {
-    constructor(props) {
-        super(props);
-        console.log(props);
-    }
-
     lifterFunc = () => {
         this.props.doSomething();
     };
 
     render() {
+        const btnInnerText = this.props.btnText;
+
         return (
-            <button onClick={this.lifterFunc}>{this.props.btnText}</button>
+            <button onClick={this.lifterFunc}>{btnInnerText}</button>
         );
     }
 }
