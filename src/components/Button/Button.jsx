@@ -1,18 +1,14 @@
 import React from 'react';
-import './AbstractButton.css'
+import './Button.css';
 
-class AbstractButton extends React.Component {
-    lifterFunc = () => {
-        this.props.handler();
-    };
+export default function Button({ btnText, handler }) {
+  const lifterFunc = () => {
+    handler();
+  };
 
-    render() {
-        const btnInnerText = this.props.btnText;
-
-        return (
-            <button onClick={this.lifterFunc} className="button">{btnInnerText}</button>
-        );
-    }
+  return (
+    <button onClick={lifterFunc} className="button">
+      {btnText}
+    </button>
+  );
 }
-
-export default AbstractButton;
